@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="486.0" prefWidth="750.0" stylesheets="@css/estilo.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.tiagods.controller.ControllerCliente">
+   <children>
+      <JFXTabPane fx:id="tabPane" layoutY="47.0" prefHeight="431.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                      <Tab fx:id="tabPesquisa" text="Pesquisa">
+                          <content>
+                              <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="180.0" prefWidth="910.0">
+                                  <children>
+                                      <JFXComboBox fx:id="cbSituacao" layoutX="16.0" layoutY="14.0" prefHeight="25.0" prefWidth="144.0" promptText="Situação" />
+                                      <JFXComboBox fx:id="cbSetorPesquisa" layoutX="165.0" layoutY="14.0" prefHeight="25.0" prefWidth="144.0" />
+                                      <JFXTextField fx:id="txPesquisa" layoutX="13.0" layoutY="50.0" onKeyReleased="#pesquisar" promptText="Entre com um valor" />
+                                      <JFXComboBox fx:id="cbFiltro" layoutX="165.0" layoutY="50.0" prefHeight="25.0" prefWidth="145.0" promptText="Filtrar por:" />
+                                      <TableView fx:id="tbClientes" layoutX="9.0" layoutY="86.0" prefHeight="191.0" prefWidth="700.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                      <PieChart fx:id="grafico" layoutX="418.0" prefHeight="150.0" prefWidth="250.0" />
+                              <JFXButton fx:id="btnNovo1" layoutX="675.0" layoutY="335.0" mnemonicParsing="false" onAction="#novo" prefWidth="65.0" styleClass="btOrange" text="Novo" />
+                                  </children>
+                              </AnchorPane>
+                          </content>
+                      </Tab>
+                      <Tab fx:id="tabCadastro" text="Cadastro">
+                          <content>
+                              <AnchorPane fx:id="pnCadastro" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="180.0" prefWidth="200.0">
+                                  <children>
+                                      <JFXTextField fx:id="txCodigo" disable="true" layoutX="83.0" layoutY="14.0" prefHeight="25.0" prefWidth="57.0" />
+                                      <Label layoutX="7.0" layoutY="53.0" prefHeight="17.0" prefWidth="76.0" text="Nome:">
+                                          <font>
+                                              <Font name="System Bold" size="12.0" />
+                                          </font>
+                                      </Label>
+                                      <JFXTextField fx:id="txNome" layoutX="83.0" layoutY="49.0" prefHeight="25.0" prefWidth="230.0" />
+                                      <Label layoutX="6.0" layoutY="91.0" prefHeight="17.0" prefWidth="76.0" text="Email:">
+                                          <font>
+                                              <Font name="System Bold" size="12.0" />
+                                          </font>
+                                      </Label>
+                                      <JFXTextField fx:id="txEmail" layoutX="82.0" layoutY="87.0" prefHeight="25.0" prefWidth="231.0" />
+                                      <Label layoutX="7.0" layoutY="130.0" prefHeight="17.0" prefWidth="76.0" text="Endereço:">
+                                          <font>
+                                              <Font name="System Bold" size="12.0" />
+                                          </font>
+                                      </Label>
+                                      <JFXTextField fx:id="txEndereco" layoutX="83.0" layoutY="126.0" prefHeight="25.0" prefWidth="229.0" />
+                                      <Label layoutX="7.0" layoutY="165.0" prefHeight="17.0" prefWidth="76.0" text="Setor:">
+                                          <font>
+                                              <Font name="System Bold" size="12.0" />
+                                          </font>
+                                      </Label>
+                                      <JFXComboBox fx:id="cbSetor" layoutX="86.0" layoutY="161.0" prefHeight="25.0" prefWidth="226.0" />
+                                      <JFXButton layoutX="319.0" layoutY="161.0" mnemonicParsing="false" onAction="#novoSetor" prefHeight="25.0" prefWidth="33.0" styleClass="btOrange" text="+" />
+                                      <JFXCheckBox fx:id="ckDesabilitar" layoutX="217.0" layoutY="201.0" mnemonicParsing="false" text="Desabilitar">
+                                          <font>
+                                              <Font name="System Bold" size="12.0" />
+                                          </font>
+                                      </JFXCheckBox>
+                                      <JFXButton fx:id="btnNovo" layoutX="206.0" layoutY="348.0" mnemonicParsing="false" onAction="#novo" prefWidth="65.0" styleClass="btOrange" text="Novo" />
+                                      <JFXButton fx:id="btnAlterar" layoutX="295.0" layoutY="348.0" mnemonicParsing="false" onAction="#editar" prefWidth="65.0" styleClass="btOrange" text="Alterar" />
+                                      <JFXButton fx:id="btnSalvar" layoutX="387.0" layoutY="348.0" mnemonicParsing="false" onAction="#salvar" prefWidth="65.0" styleClass="btOrange" text="Salvar" />
+                                      <JFXButton fx:id="btExcluir" layoutX="480.0" layoutY="348.0" mnemonicParsing="false" onAction="#excluir" prefWidth="65.0" styleClass="btOrange" text="Excluir" />
+                                  </children>
+                              </AnchorPane>
+                          </content>
+                      </Tab>
+                  </tabs>
+              </JFXTabPane>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="729.0" text="Controle de Clientes" textAlignment="CENTER" textFill="#807d7d">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
